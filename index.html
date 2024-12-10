@@ -124,7 +124,6 @@
     <a href="assets/srour.apk" id="installButton1" class="button" download>Download for android</a>
     <a href="assets/srour.ipa" id="installButton2" class="button" download>Download for iPhone</a>
     
-    
     <h3 class="text-start">صور داخل التطبيق ></h3>
     
     <div class="images">
@@ -145,6 +144,15 @@
     </div>
 
     <script>
+        const downloadButtons = document.querySelectorAll('.button[download]');
+        downloadButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                setTimeout(() => {
+                    alert("تم بدء التنزيل. يمكنك التحقق من سجل التنزيلات إذا لم يبدأ التنزيل تلقائيًا.");
+                }, 500);
+            });
+        });
+
         var images = document.querySelectorAll('.images img');
         var currentIndex = 0;
 
